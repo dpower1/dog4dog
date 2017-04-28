@@ -1,4 +1,3 @@
-<html>
 <?php
 $servername = "dogfordog.cyorizcugugl.us-east-1.rds.amazonaws.com";
 $username = "root";
