@@ -61,11 +61,11 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
         $sql_query_userDescription ="UPDATE `Users` SET `Description`='$body', 'location'='$newLocation', 'Picture'='$target_file' WHERE 'userID'='$userID'";
-        $result = mysql_query($sql_query_userDescription);
+        $result = mysqli_query($sql_query_userDescription);
     
         if(! $result){
             print("Error - query could not be executed");
-            $error = mysql_error();
+            $error = mysqli_error();
             print "<p> . $error . </p>";
         }   
 
