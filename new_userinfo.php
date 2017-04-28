@@ -74,6 +74,6 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
-header("Location: http://ec2-54-211-83-199.compute-1.amazonaws.com/dog4dog/profile.html");
+header("Location: http://ec2-54-211-83-199.compute-1.amazonaws.com/dog4dog/profile.php");
 die();
 ?>
