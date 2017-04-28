@@ -22,8 +22,8 @@
 	$userDescriptionResult = mysqli_query($conn, $sql_query_userDescription);
 	$row_array = mysqli_fetch_array($userDescriptionResult);
 	$userDescription = $row_array["Description"];
-	$userLocation = $row_array["Location"];
-	$userImageLocation = $row_array["Image"];
+	$userLocation = $row_array["location"];
+	$userImageLocation = $row_array["Picture"];
 ?>
 
 	<div class = "user_info"> 	
