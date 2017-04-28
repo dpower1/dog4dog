@@ -1,8 +1,0 @@
-    <script>
-    gapi.load('auth2', function(){
-      gapi.auth2.init();
-      });
-    </script>
-
-https://www.youtube.com/watch?v=Oy5F9h5JqEU
-https://www.youtube.com/watch?v=j_31hJtWjlw
