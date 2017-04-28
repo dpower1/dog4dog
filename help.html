@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-signin-client_id" content="385196188134-kdtbal0k9vq2qk6obcp2i5eki9g6lail.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <img src="images/IMG1181332084.jpg" style="height: 40px; width: 60px;" align="left">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Profile</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Browse</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white" id="msgd">Messages</a>
+    <div class="g-signin2" data-onsuccess="onSignIn" align="right">
+      <img src="images/btn_google_signin_light_normal_web@2x.png" style="height: 40px; width: 160px;">
+    </div>
+  </div>
+</div>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Dog4Dog</h1>
+       Welcome
+to Dog4Dog! This service is for dogs/dog owners to find other dogs/dog
+owners and meet up with them to have a dog date! This service is to
+bring the lonely dog lovers together, and it's absolutely free!</p>
+
+<p class="font_7"><span class="wixGuard">​</span></p>
+
+<p>To get started, make a user profile with your Google
+account and fill in your profile information in the My Profile Tab and
+upload a picture of your dog! You can always go back and edit the
+information.</p>
+
+<p class="font_7">Once your profile is all set to go, you can navigate
+to the Browse and view other profiles that you may be interested in
+being paired with for your doggy date. When both parties indicate that
+they are interested in each other, then we will pair you canine/canine
+lovers up. Feel free to chat with the person to settle the date info!</p>
+
+<p class="font_7"><span class="wixGuard">​</span></p>
+
+<p class="font_7">Good luck ;)
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-center">
+	<img src="images/IMG1181332084.jpg" style="height: 150px; width: 200px;">
+      </p>
+    </div>
+    <div>
+      <p class="w3-center">
+	<img src="images/fakeAD.png" style="height: 300px; width: 600px;">
+      </p>
+    </div>
+  </div>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+
+function handleFailure() {}
+function handleSuccess() {}
+
+var opts = {
+  scope: 'email',
+  width: 200,
+  height: 50,
+  longtitle: true,
+  theme: 'dark',
+  onsuccess: handleSuccess,
+  onfailure: handleFailure
+}
+gapi.signin2.render("msgd", opts);
+
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId());
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>
