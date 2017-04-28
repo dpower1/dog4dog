@@ -15,13 +15,8 @@
     	die("Connection failed: " . $conn->connect_error);
 	} 	
 
-	$er = mysql_select_db("dogfordog");
-	if(!$er){
-		exit("Error - could not select database");
-	}
-
 	//$userID = $_SESSION["userID"];
-	$userID = "1";
+	$userID = "bill";
 	$sql_query_userDescription = "SELECT * FROM `Users` WHERE userID='$userID'";
 
 	$userDescriptionResult = mysql_query($sql_query_userDescription);

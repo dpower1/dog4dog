@@ -2,7 +2,7 @@
 session_start();
 ini_set('display_errors', 1);
 //$userID = $_SESSION["userID"];
-$userID = "1";
+$userID = "bill";
 $target_dir = "images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]) . $userID;
 $uploadOk = 1;
