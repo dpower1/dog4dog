@@ -20,7 +20,8 @@
 		exit("Error - could not select database");
 	}
 
-	$userID = $_SESSION["userID"];
+	//$userID = $_SESSION["userID"];
+	$userID = "1";
 	$sql_query_userDescription = "SELECT * FROM `Users` WHERE userID='$userID'";
 
 	$userDescriptionResult = mysql_query($sql_query_userDescription);
