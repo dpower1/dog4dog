@@ -1,15 +1,20 @@
 <?php
+session_start();
 $target_dir = "images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
-session_start();
+
 $servername = "dogfordog.cyorizcugugl.us-east-1.rds.amazonaws.com";
 $username = "root";
 $password = "dogfordog";
 $dbname ="dogfordog";
 $port = "3306";
+$userID = $_SESSION["userID"];
+$body = $_POST["body"];
+$newLocation = $_POST["location"];
+$file="images/".$_FILES["image"]["name"];
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
@@ -24,10 +29,6 @@ if(!$er){
     exit("Error - could not select database");
 }
 
-IF EXISTS (SELECT * FROM Table1 WHERE Column1=’SomeValue’)
-    UPDATE Table1 SET (…) WHERE Column1=’SomeValue’
-ELSE
-    INSERT INTO Table1 VALUES (…)
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -62,8 +63,19 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        $sql_query_userDescription ="UPDATE `Users` SET `Description`='$body', 'location'='$newLocation', 'Picture'='$file' WHERE 'userID'='$userID'";
+        $result = mysql_query($sql_query_userDescription);
+    
+        if(! $result){
+            print("Error - query could not be executed");
+            $error = mysql_error();
+            print "<p> . $error . </p>";
+        }   
+
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
 }
+header("Location: http://ec2-54-211-83-199.compute-1.amazonaws.com/dog4dog/home.html");
+die();
 ?>
