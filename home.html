@@ -3,7 +3,7 @@
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="google-signin-client_id" content="385196188134-6j295hft45ct7m88hl3gvp52s9m6b78k.apps.googleusercontent.com">
+<meta name="google-signin-client_id" content="385196188134-kdtbal0k9vq2qk6obcp2i5eki9g6lail.apps.googleusercontent.com">
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
@@ -21,8 +21,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     <a href="#" class="w3-bar-item w3-button w3-theme-l1">Home</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Profile</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Browse</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Messages</a>
-    <div class="g-signin2" data-onsuccess="onSignIn">
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white" id="msgd">Messages</a>
+    <div class="g-signin2" data-onsuccess="onSignIn" align="right">
       <img src="btn_google_signin_light_normal_web@2x.png" style="height: 40px; width: 160px;">
     </div>
   </div>
@@ -97,6 +97,29 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 </div>
 
 <script>
+
+function handleFailure() {}
+function handleSuccess() {}
+
+var opts = {
+  scope: 'email',
+  width: 200,
+  height: 50,
+  longtitle: true,
+  theme: 'dark',
+  onsuccess: handleSuccess,
+  onfailure: handleFailure
+}
+gapi.signin2.render("msgd", opts);
+
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId());
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+
 // Get the Sidebar
 var mySidebar = document.getElementById("mySidebar");
 

@@ -15,16 +15,19 @@
     	die("Connection failed: " . $conn->connect_error);
 	} 	
 
+	$er = mysql_select_db("dogfordog");
+	if(!$er){
+		exit("Error - could not select database");
+	}
+
 	$userID = $_SESSION["userID"];
-	$sql_query_userDescription = "SELECT `Description` FROM `Users` WHERE userID='$userID'";
+	$sql_query_userDescription = "SELECT * FROM `Users` WHERE userID='$userID'";
 
 	$userDescriptionResult = mysql_query($sql_query_userDescription);
 	$row_array = mysql_fetch_array($userDescriptionResult);
-	$userinfo = $row_array[body];
-
-	$sql_query_picture = "SELECT * FROM Users WHERE userID = $userID";
-	$userPictureResult = mysql_query($sql_query_picture);
-	$picture_row_array = mysql_fetch_array($userPictureResult);
+	$userDescription = $row_array["Description"];
+	$userLocation = $row_array["Location"];
+	$userImageLocation = $row_array["Image"];
 ?>
 
 	<div class = "user_info"> 	
@@ -32,7 +35,7 @@
 		<table>
 			<tr>
 			<td class = "user_info">
-			<?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $picture_row_array['Picture'] ).'"/>'; ?> <br />
+			<?php echo '<img src=images/'$userImageLocation' )./>'; ?> <br />
 			<?php echo($userinfo); ?> <br />
 			<a class = "edit" href="edit.php">Edit userinfo here </a>
 			</td>
