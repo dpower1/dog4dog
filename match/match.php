@@ -1,16 +1,20 @@
 <html>
 <?php
+
+include('/var/www/html/dog4dog/sharedPHP/dbconnection.php');
+//global $con;
+
 //echo "in php";
-$servername = "dogfordog.cyorizcugugl.us-east-1.rds.amazonaws.com";
-$username = "root";
-$password = "dogfordog";
-$dbname ="dogfordog";
-$port = "3306";
+//$servername = "dogfordog.cyorizcugugl.us-east-1.rds.amazonaws.com";
+//$username = "root";
+//$password = "dogfordog";
+//$dbname ="dogfordog";
+//$port = "3306";
 
 //echo "creating connection";
 
-$con = @new mysqli($servername, $username, $password, $dbname) or
-	die("Could not connect to database" . $con->connect_error);
+//$con = @new mysqli($servername, $username, $password, $dbname) or
+//	die("Could not connect to database" . $con->connect_error);
 //echo "connected to sql";
 
 $currentUserID = "test";
