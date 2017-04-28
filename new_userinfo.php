@@ -60,7 +60,7 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-        $sql_query_userDescription ="UPDATE `Users` SET `Description`='$body', 'location'='$newLocation', 'Picture'='$target_file' WHERE 'userID'='$userID'";
+        $sql_query_userDescription ="UPDATE `Users` SET Description='$body', location='$newLocation', Picture='$target_file' WHERE userID='$userID'";
         $result = mysqli_query($conn, $sql_query_userDescription);
     
         if(! $result){
