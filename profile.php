@@ -19,8 +19,8 @@
 	$userID = "bill";
 	$sql_query_userDescription = "SELECT * FROM `Users` WHERE userID='$userID'";
 
-	$userDescriptionResult = mysql_query($sql_query_userDescription);
-	$row_array = mysql_fetch_array($userDescriptionResult);
+	$userDescriptionResult = mysqli_query($conn, $sql_query_userDescription);
+	$row_array = mysqli_fetch_array($userDescriptionResult);
 	$userDescription = $row_array["Description"];
 	$userLocation = $row_array["Location"];
 	$userImageLocation = $row_array["Image"];
