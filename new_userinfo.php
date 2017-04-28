@@ -25,11 +25,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$er = mysql_select_db("dogfordog");
-if(!$er){
-    exit("Error - could not select database");
-}
-
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
