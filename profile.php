@@ -31,7 +31,7 @@
 		<table>
 			<tr>
 			<td class = "user_info">
-			<?php echo '<img src=images/'$userImageLocation'>'; ?> <br />
+			 <img src="<?php $userImageLocation ?>"</img> <br />
 			<p><?php echo($userDescription); ?></p> <br />
 			<p><?php echo($userLocation); ?></p> <br />
 			<a class = "edit" href="edit.php">Edit userinfo here </a>
