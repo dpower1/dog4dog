@@ -1,7 +1,9 @@
 <?php
 session_start();
+ini_set('display_errors', 1);
+$userID = $_SESSION["userID"];
 $target_dir = "images/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]) . $userID;
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
