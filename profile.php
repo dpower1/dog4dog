@@ -24,6 +24,7 @@
 	$userDescription = $row_array["Description"];
 	$userLocation = $row_array["location"];
 	$userImageLocation = $row_array["Picture"];
+	$userName = $row_array["name"];
 ?>
 
 	<div class = "user_info"> 	
@@ -32,8 +33,9 @@
 			<tr>
 			<td class = "user_info">
 			<?php echo '<img src="'.$userImageLocation.'">'; ?><br />
-			<p><?php echo($userDescription); ?></p> <br />
-			<p><?php echo($userLocation); ?></p> <br />
+			<p>Name: <?php echo($userName); ?> </p><br />
+			<p>Description: <?php echo($userDescription); ?></p> <br />
+			<p>Location: <?php echo($userLocation); ?></p> <br />
 			<a class = "edit" href="edit.php">Edit userinfo here </a>
 			</td>
 			</tr>

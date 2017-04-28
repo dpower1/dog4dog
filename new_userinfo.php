@@ -17,6 +17,7 @@ $dbname ="dogfordog";
 $port = "3306";
 $body = $_POST["body"];
 $newLocation = $_POST["location"];
+$newUsername = $_POST["name"];
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
@@ -60,7 +61,7 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-        $sql_query_userDescription ="UPDATE `Users` SET Description='$body', location='$newLocation', Picture='$target_file' WHERE userID='$userID'";
+        $sql_query_userDescription ="UPDATE `Users` SET Description='$body', location='$newLocation', Picture='$target_file', name='$newUsername' WHERE userID='$userID'";
         $result = mysqli_query($conn, $sql_query_userDescription);
     
         if(! $result){
@@ -73,6 +74,6 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
-header("Location: http://ec2-54-211-83-199.compute-1.amazonaws.com/dog4dog/profile.html");
+header("Location: http://ec2-54-211-83-199.compute-1.amazonaws.com/dog4dog/profile.php");
 die();
 ?>
