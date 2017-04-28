@@ -20,9 +20,26 @@ angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards2'])
 
 .controller('CardsCtrl', function($scope, TDCardDelegate, $timeout) {
 
+//get the images
+/*
+var listOfUsers[];
+//new
+	xmlhttp = new XMLHttpRequest();
+	
+	//new stuff
+	xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+    };
+	
+	xmlhttp.open("GET","getuser.php?",true);
+    xmlhttp.send();
+
+*/
   var cardTypes = [
-    { image: 'http://c4.staticflickr.com/4/3924/18886530069_840bc7d2a5_n.jpg' },
-    { image: 'http://c1.staticflickr.com/1/421/19046467146_548ed09e19_n.jpg' },
+    { image: 'http://c4.staticflickr.com/4/3924/18886530069_840bc7d2a5_n.jpg', thingy: 'hi' },
+    { image: 'http://c1.staticflickr.com/1/421/19046467146_548ed09e19_n.jpg', thingy: 'dog' },
     { image: 'http://c1.staticflickr.com/1/278/18452005203_a3bd2d7938_n.jpg' },
     { image: 'http://c1.staticflickr.com/1/297/19072713565_be3113bc67_n.jpg' },
     { image: 'http://c1.staticflickr.com/1/536/19072713515_5961d52357_n.jpg' },
@@ -71,6 +88,10 @@ angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards2'])
     var card = $scope.cards.active[index];
     $scope.cards.liked.push(card);
 	
+	console.log($scope.cards);
+	console.log(card.thingy);
+	
+	//new
 	xmlhttp = new XMLHttpRequest();
 	
 	//new stuff

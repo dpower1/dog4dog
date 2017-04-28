@@ -42,6 +42,7 @@ echo "Connected successfully";
       </ion-header-bar>
 
       <div class="td-title">
+	  <div id="txtHint"><b>Person info will be listed here...</b></div>
         <div class="row">
           <div class="col">Master: <span>{{ cards.master.length }}</span></div>
           <div class="col">Cards: <span>{{ cards.active.length }}</span></div>
@@ -73,6 +74,7 @@ echo "Connected successfully";
               ************************* -->
               <div class="discard" ng-click="onClickTransitionOut(card)">DISCARD</div>
               <img ng-src="{{ card.image }}">
+			  <p>{{ card.thingy }}"</p>
             </div>
           </td-card>
           <!-- *************************
@@ -87,7 +89,7 @@ echo "Connected successfully";
       </div>
 
     </ion-pane>
-	<div id="txtHint"><b>Person info will be listed here...</b></div>
+	
   </body>
 
 </html>
