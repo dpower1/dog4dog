@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="google-signin-scope" content="profile email">
+        <meta name="google-signin-client_id" content="CORRECT_VALUE_HERE.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <title>Google sign in test</title>
+    </head>
+    <body>
+        <h1>Google sign in test</h1>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <br>
+        <a href="#" onclick="signOut();">Sign out</a>
+        <br>
+        <a href="index.html">Back</a>
+        <br>
+        <a href="#" onclick="someTest()">JavaScript Test</a>
+        <br>
+        <ul>
+            <li id="gID">Google ID, temporary</li>
+            <li id="gFullName">Full Name</li>
+            <li id="gGivenName">Given Name</li>
+            <li id="gFamilyName">FamilyName</li>
+            <li id="gImg">Image URL</li>
+            <li id="gEMail">E-Mail</li>
+            <li id="gToken">Google Token, permanent</li>
+        </ul>
+        <script>
+            function onSignIn(googleUser) {
+                alert('in onSignIn');
+                // Useful data for your client-side scripts:
+                var profile = googleUser.getBasicProfile();
+                document.getElementById('gID').textContent = profile.getId();
+                document.getElementById('gFullName').textContent = profile.getName();
+                document.getElementById('gGivenName').textContent = profile.getGivenName();
+                document.getElementById('gFamilyName').textContent = profile.getFamilyName();
+                document.getElementById('gImg').textContent = profile.getImageUrl();
+                document.getElementById('gEMail').textContent = profile.getEmail();
+
+                // The ID token you need to pass to your backend:
+                var id_token = googleUser.getAuthResponse().id_token;
+                document.getElementById('gToken').textContent = id_token;
+            };
+            function someTest() {
+                alert('js is working');
+                var x = {};
+                x.getBasicProfile = function() {
+                    var y = {};
+
+                    y.getId = function() { return 'fake id'; };
+                    y.getName = function() { return 'fake fake full name'; };
+                    y.getGivenName = function() { return 'fake fake given name'; };
+                    y.getFamilyName = function() { return 'fake fake family name'; };
+                    y.getImageUrl = function() { return 'fake image'; };
+                    y.getEmail = function() { return 'fake e-mail'; };
+
+                    return y;
+                };
+
+                x.getAuthResponse = function() {
+                    var z = {}
+
+                    z.id_token = 'fake id token';
+
+                    return z;
+                };
+
+                onSignIn(x);
+
+            };
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                });
+            };
+        </script>
+    </body>
+</html>
