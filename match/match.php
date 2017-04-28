@@ -2,14 +2,13 @@
 <html>
 
 <script src="https://www.w3schools.com/lib/w3data.js"></script>
-<div w3-include-html="/dog4dog/home.html"></div>
+<div w3-include-html="/dog4dog/header.html"></div>
 <script>
 w3IncludeHTML();
 </script>
 
 
-<button class="m-button muut-messaging-button" data-recipients="Display Name <jrust>; Another name <sadieb1>" data-forumname="dog4dog">Message username and username2</button>
-<script src="//cdn.muut.com/1/moot.min.js"></script>
+
 
 <body>
 
@@ -23,7 +22,13 @@ $row = mysqli_fetch_array($result);
 
 $matches = $row['Matched'];
 
-echo "YOUR MATCHES: " . $matches;
+//echo "YOUR MATCHES: " . $matches;
+
+foreach (explode(",", $matches) as $match) {
+  echo "\r\nMatch: " . $match;
+  echo "<button class=\"m-button muut-messaging-button\" data-recipients=\"Display Name <jrust>; Another name <sadieb1>\" data-forumname=\"dog4dog\">Message username and username2</button>
+<script src=\"//cdn.muut.com/1/moot.min.js\"></script>";
+}
 
 ?>
 
