@@ -1,6 +1,6 @@
+<?php session_start() ?>
 <html><body>
 <?php
-	session_start();
 	$servername = "dogfordog.cyorizcugugl.us-east-1.rds.amazonaws.com";
 	$username = "root";
 	$password = "dogfordog";
