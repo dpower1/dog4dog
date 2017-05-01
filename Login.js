@@ -1,10 +1,11 @@
+/* global gapi */
 var auth2; // The Sign-In object. 
 var googleUser; // The current user.
 
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
-    var uID = profile.getId();
-    console.log("ID: " + uID);
+    var userID = profile.getId();
+    console.log("ID: " + userID);
     console.log('Full Name: ' + profile.getName());
     console.log('Given Name: ' + profile.getGivenName());
     console.log('Family Name: ' + profile.getFamilyName());
@@ -31,8 +32,9 @@ var appStart = function() {
  */
 var initSigninV2 = function() {
     auth2 = gapi.auth2.init({
-    client_id: '385196188134-kdtbal0k9vq2qk6obcp2i5eki9g6lail.apps.googleusercontent.com',
-    scope: 'profile' }); // end init
+        client_id: '385196188134-kdtbal0k9vq2qk6obcp2i5eki9g6lail.apps.googleusercontent.com',
+        scope: 'profile' 
+    }); // end init
     
     // Listen for sign-in state changes.
     auth2.isSignedIn.listen(signinChanged);
