@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://www.w3schools.com/lib/w3data.js"></script>
-  <div w3-include-html="/dog4dog/header.html"></div>
-  <script>
-    w3IncludeHTML();
-  </script>
+  <?php include('header.php');  ?>  
   
   <style type="text/css">
   #matches {
@@ -26,7 +22,7 @@
 <body>
 
 <?php
-include('/var/www/html/dog4dog/sharedPHP/dbconnection.php');
+include('sharedPHP/dbconnection.php');
 $currentUserID = "test";
 
 $result = mysqli_query($con, "select Matched from Users where userID='$currentUserID' ") or die(mysqli_error($con));
