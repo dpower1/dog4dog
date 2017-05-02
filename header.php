@@ -1,6 +1,7 @@
 <title>Dog4Dog</title>
 <meta charset="UTF-8">
-<base href=" https://dog4dog-mjkoogle.c9users.io/"></base>
+<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<base href="https://dog4dog-mjkoogle.c9users.io/"></base>
 
 <!-- Check it out: I added an icon to the tab -->
 <?php include('D4d_Favicon.html');  ?>
@@ -18,7 +19,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Runs our Google login API -->
-<script src="Login.js"></script>
+<script src="Login.js" type = "text/javascript" language = "javascript"></script>
 
 <!-- Define standard symbols -->
 <style>
@@ -28,13 +29,13 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 <!-- Navbar -->
 <div class="w3-top">
   <nav class="w3-bar w3-theme w3-top w3-left-align w3-large">
-    <a href="home.php"><img src="images/IMG11813320842.png" style="height: 43px; width: 43px; margin:5px 3px 3px 5px;" align="left"></a>
-    <a href="home.php" class="w3-bar-item w3-button w3-theme-l1" style="margin:5px;"><i class="fa fa-home fa-fw"></i>&nbsp;Home</a>
+    <a href="home.php"><img src="images/IMG11813320842.png" style="height: 43px; width: 43px; margin:5px 3px 0px 5px;" align="left"></a>
+    <a href="home.php" class="w3-bar-item w3-button w3-theme-l1" style="margin:5px;"><i class="fa fa-home fa-fw fa-fh"></i>&nbsp;Home</a>
     <a href="" class="w3-bar-item w3-button w3-hide-small w3-hover-white" style="margin:5px;"><i class="fa fa-user fa-fw"></i>&nbsp;Profile</a>
     <a href="" class="w3-bar-item w3-button w3-hide-small w3-hover-white" style="margin:5px;"><i class="fa fa-globe fa-fw"></i>&nbsp;Browse</a>
     <a href="/match/match.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white" id="msgd" style="margin:5px;"><i class="fa fa-envelope fa-fw"></i>&nbsp;Messages</a>
   	<a href="help.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white" style="margin:5px;"><i class="fa fa-info-circle fa-fw"></i>&nbsp;About</a>
-    <a href="home.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white w3-hide" onclick="signOut()" id="logout" style="margin:5px;"><i class="fa fa-sign-out fa-fw"></i>&nbsp;Sign Out</a>
-  	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="height: 40px; margin:5px 5px;"> </div>
+    <a href="home.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white w3-hide" onclick="signOut()" id="logout" style="margin:5px;  border: 1px solid red;"><i class="fa fa-sign-out fa-fw"></i>&nbsp;Sign Out</a>
+  	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="height: 43px; margin:5px;"> </div>
   </nav>
 </div>

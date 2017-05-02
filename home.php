@@ -19,7 +19,7 @@
       <p align="center">Make an account and browse other users near you!   Create a profile, select one of our three options, "Seeking Dog", "Seeking Human", or "Seeking Both", and you are on your way to making you furry friends!</p>
     </section>
     <aside class="w3-container w3-display-topright">
-      <img src="images/fakeAD.png" style="height: 300px; width: 600px;">
+      <a href="https://cdn-images-1.medium.com/max/455/1*snTXFElFuQLSFDnvZKJ6IA.png"><img src="images/fakeAD.png" style="height: 300px; width: 600px;"></a>
     </aside>
   </div>
 </main>

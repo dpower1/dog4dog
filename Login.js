@@ -1,17 +1,26 @@
 /* global gapi */
+/* global $ */
 var auth2; // The Sign-In object. 
 var googleUser; // The current user.
+var server = "/session/result.php";
 
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
-    var userID = profile.getId();
-    console.log('ID: ' + userID);
+    var uID = profile.getId();
+    console.log('ID: ' + uID);
     console.log('Full Name: ' + profile.getName());
     console.log('Given Name: ' + profile.getGivenName());
     console.log('Family Name: ' + profile.getFamilyName());
     console.log("Image URL: " + profile.getImageUrl());
     console.log("Email: " + profile.getEmail());
 
+    // Sends user ID to server for Session assignment
+    $(document).ready(function() {
+        $.post(server, { userID: uID });
+        $.post(server, { action: 'no call'});
+    });
+
+    // Displays login button on login
     var x = document.getElementById("logout");
     if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
@@ -25,6 +34,13 @@ function signOut() {
     auth2.signOut().then(function () {
         console.log('User signed out.');
     });
+    
+    // Clears session on logout
+    $(document).ready(function() {
+        $.post(server, {action:'call_this'});
+    });  
+    
+    // Hides logout button on logout
     var x = document.getElementById("logout");
     if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
