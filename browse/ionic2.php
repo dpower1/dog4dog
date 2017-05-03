@@ -7,18 +7,23 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
   <title>Ionic Tinder Cards 2</title>
-
+	
+	
     <link href="http://code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
     <script src="http://code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
 
     <script src="http://code.ionicframework.com/collide/0.0.4/collide.js"></script>
     <script src="http://www.loringdodge.com/files/ionic.tdcards2.js"></script>
+	
+
     <script src="codepenJS2.js"></script>
     <link href="codepenCSS2.css" rel="stylesheet">
-
+	
 </head>
 
-<body ng-app="starter" no-scroll>
+<!--<body ng-app="starter" no-scroll onload="tellMe()">-->
+<body ng-app="starter" no-scroll onload="tellMe()">
+<!--<body no-scroll >-->
 <?php
 ini_set('display_errors', 1);
 $servername = "dogfordog.cyorizcugugl.us-east-1.rds.amazonaws.com";
@@ -74,8 +79,8 @@ echo "Connected successfully";
               ************************* -->
               <div class="discard" ng-click="onClickTransitionOut(card)">DISCARD</div>
               <img ng-src="{{ card.image }}">
-			  <p>{{ card.thingy }}"</p>
             </div>
+			<div class="theText">{{ card.name }}</div>
           </td-card>
           <!-- *************************
             End Card
@@ -87,9 +92,10 @@ echo "Connected successfully";
           </td-card>
         </td-cards>
       </div>
+	  
 
     </ion-pane>
-	
+	<div>{{ card.thingy }}</div>
   </body>
 
 </html>
