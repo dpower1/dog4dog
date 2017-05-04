@@ -1,18 +1,31 @@
 <?php
 header("Content-Type: application/json", true);
 ini_set('display_errors', 1);
+
+/*
 $servername = "dogfordog.cyorizcugugl.us-east-1.rds.amazonaws.com";
 $username = "root";
 $password = "dogfordog";
 $dbname ="dogfordog";
 $port = "3306";
+*/
+
+
+$servername = getenv('IP');
+$username = getenv('C9_USER');
+$password = "";
+$database = "dogfordog";
+$dbport = 3306;
+
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname, $port);
+$conn = new mysqli($servername, $username, $password, $database, $dbport);
 
 // Check connection
 if ($conn->connect_error) {
+    //echo "wtf";
     die("Connection failed: " . $conn->connect_error);
+    
 } 
 //echo "Connected successfully";
 
@@ -54,7 +67,8 @@ if (!isset($myObj))
 
 //$myObj->image = array();
 //$myObj->name = array();
-$myObj->image = "http://ec2-54-211-83-199.compute-1.amazonaws.com/dog4dog/" . $row["Picture"];
+//$myObj->image = "http://ec2-54-211-83-199.compute-1.amazonaws.com/dog4dog/" . $row["Picture"];
+$myObj->image = "https://dog4dog-mjkoogle.c9users.io/" . $row["Picture"];
 $myObj->name = $row["name"];
 //array_push($myObj->image,"http://ec2-54-211-83-199.compute-1.amazonaws.com/dog4dog/" . $row["Picture"]);
 //array_push($myObj->name,"Name: " . $row["name"]);
@@ -103,7 +117,7 @@ if ($result->num_rows > 0) {
 		
 		$myObj = new stdClass();
 		
-		$myObj->image = "http://ec2-54-211-83-199.compute-1.amazonaws.com/dog4dog/" . $row["Picture"];
+		$myObj->image = "https://dog4dog-mjkoogle.c9users.io/" . $row["Picture"];
 		$myObj->name = $row["name"];
 		array_push($users, $myObj);
 		

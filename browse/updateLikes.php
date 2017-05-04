@@ -4,14 +4,22 @@ ini_set('display_errors', 1);
 header("Content-Type: application/json; charset=UTF-8");
 $obj = json_decode($_GET["x"], false);
 
+/*
 $servername = "dogfordog.cyorizcugugl.us-east-1.rds.amazonaws.com";
 $username = "root";
 $password = "dogfordog";
 $dbname ="dogfordog";
 $port = "3306";
+*/
+
+$servername = getenv('IP');
+$username = getenv('C9_USER');
+$password = "";
+$database = "dogfordog";
+$dbport = 3306;
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname, $port);
+$conn = new mysqli($servername, $username, $password, $database, $dbport);
 
 // Check connection
 if ($conn->connect_error) {

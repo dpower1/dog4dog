@@ -1,53 +1,34 @@
-
-
 <html>
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
-  <title>Ionic Tinder Cards 2</title>
+<!--  <title>Ionic Tinder Cards 2</title> -->
 	
-	
-    <link href="http://code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
-    <script src="http://code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+	  <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link href="https://code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+    <script src="https://code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
 
-    <script src="http://code.ionicframework.com/collide/0.0.4/collide.js"></script>
-    <script src="http://www.loringdodge.com/files/ionic.tdcards2.js"></script>
+    <script src="https://code.ionicframework.com/collide/0.0.4/collide.js"></script>
+    <!--<script src="https://www.loringdodge.com/files/ionic.tdcards2.js"></script>-->
+    <script src="tdcards2.js"></script>
 	
 
     <script src="codepenJS2.js"></script>
     <link href="codepenCSS2.css" rel="stylesheet">
-	
+
 </head>
 
 <!--<body ng-app="starter" no-scroll onload="tellMe()">-->
 <body ng-app="starter" no-scroll onload="tellMe()">
-<!--<body no-scroll >-->
-<?php
-ini_set('display_errors', 1);
-$servername = "dogfordog.cyorizcugugl.us-east-1.rds.amazonaws.com";
-$username = "root";
-$password = "dogfordog";
-$dbname ="dogfordog";
-$port = "3306";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname, $port);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connected successfully";
-?>
+<!--<body no-scroll > -->
+<?php ini_set('display_errors', 1); ?>
     <ion-pane ng-controller="CardsCtrl" class="background-grey">
-      <ion-header-bar class="bar-default">
-        <h1 class="title">TD Cards 2</h1>
-      </ion-header-bar>
-
+      <?php include('../header.php');  ?>
       <div class="td-title">
-	  <div id="txtHint"><b>Person info will be listed here...</b></div>
+    	  <div id="txtHint"><b>Person info will be listed here...</b></div>
         <div class="row">
           <div class="col">Master: <span>{{ cards.master.length }}</span></div>
           <div class="col">Cards: <span>{{ cards.active.length }}</span></div>
@@ -95,7 +76,7 @@ echo "Connected successfully";
 	  
 
     </ion-pane>
-	<div>{{ card.thingy }}</div>
+	
   </body>
 
 </html>

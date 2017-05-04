@@ -51,6 +51,7 @@ console.log("before stuff");
             if (this.readyState == 4 && this.status == 200) {
                
 				var myStr = JSON.parse(this.responseText);
+				//var myStr = this.responseText;
 	
 				console.log(myStr);
 				//console.log(myStr[name]);
@@ -161,6 +162,7 @@ ionicApp.directive('noScroll', function($document) {
 .controller('CardsCtrl', function($scope, TDCardDelegate, $timeout, $http) {
 				
 				//var cardTypes = myStr;
+				
 				/*
 					var cardTypes = [
     { image: 'http://c4.staticflickr.com/4/3924/18886530069_840bc7d2a5_n.jpg', name: 'This first step in this test case will be to have a logged in user look at another profile. At this point the system should check to see if the user has judged the profile previously. If it has then it should display what the user had previously judged the profile. If there is an error at this point, the system will show the user that there was an error retrieving previous judgement data.' },
@@ -172,6 +174,8 @@ ionicApp.directive('noScroll', function($document) {
     { image: 'http://c1.staticflickr.com/1/267/19067097362_14d8ed9389_n.jpg' }
   ];
 */
+
+
   console.log("in controller");
   
   $http.get("getuser.php")
@@ -186,6 +190,8 @@ ionicApp.directive('noScroll', function($document) {
     disliked: []
 	}
   });
+  
+  
   
   /*
   var cardTypes;
