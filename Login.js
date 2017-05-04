@@ -27,6 +27,9 @@ function onSignIn(googleUser) {
     } else { 
         x.className = x.className.replace(" w3-show", "");
     }
+    
+    //roamOn();
+
 };
 
 function signOut() {
@@ -39,7 +42,7 @@ function signOut() {
     $(document).ready(function() {
         $.post(server, {action:'call_this'});
     });  
-    
+
     // Hides logout button on logout
     var x = document.getElementById("logout");
     if (x.className.indexOf("w3-show") == -1) {
@@ -47,6 +50,9 @@ function signOut() {
     } else { 
         x.className = x.className.replace(" w3-show", "");
     }
+
+//roamOff();
+
 };
 
 /**
@@ -134,3 +140,18 @@ var refreshValues = function() {
         updateGoogleUser();
     }
 };
+
+function roamOn(){
+    document.getElementById('profile').href = "https://dog4dog-mjkoogle.c9users.io/profile.php";
+    document.getElementById('browse').href = "https://dog4dog-mjkoogle.c9users.io/browse/ionic2.php";
+    document.getElementById('msgd').href = "https://dog4dog-mjkoogle.c9users.io/match/match.php";
+}
+
+function roamOff(){
+//    $("#profile").attr("href","https://dog4dog-mjkoogle.c9users.io/home.php");
+//    $("#browse").attr("href","https://dog4dog-mjkoogle.c9users.io/home.php");
+//    $("#msgd").attr("href","https://dog4dog-mjkoogle.c9users.io/home.php");
+    document.getElementById('profile').href = "https://dog4dog-mjkoogle.c9users.io/home.php";
+    document.getElementById('browse').href = "https://dog4dog-mjkoogle.c9users.io/home.php";
+    document.getElementById('msgd').href = "https://dog4dog-mjkoogle.c9users.io/home.php";
+}
