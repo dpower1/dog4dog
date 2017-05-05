@@ -7,6 +7,8 @@ cardTypes = [{ image: 'http://c1.staticflickr.com/1/421/19046467146_548ed09e19_n
 
 var wait = 1;
 
+var loggedID;
+
 //promise
 
 /*
@@ -77,7 +79,23 @@ xmlhttp.send();
 function tellMe(){
 	
 	console.log("in body");
+	//$.ajax({url:"sessionGet.php", success: gotSess});
+	
+	$.ajax({url: "sessionGet.php", success: function(result){
+        loggedID = result;
+        console.log(loggedID);
+    }});
 }
+
+function gotSess(sessIn){
+  
+  loggedID = sessIn;
+  //loggedID = 5;
+  console.log(loggedID);
+  
+  
+}
+
 
 
 /*
@@ -271,6 +289,7 @@ xmlhttp.send();
   };
   $scope.cardSwipedRight = function(index) {
     console.log('RIGHT SWIPE');
+    console.log(loggedID);
     var card = $scope.cards.active[index];
     $scope.cards.liked.push(card);
 	

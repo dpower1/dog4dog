@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 
 <head>
@@ -27,6 +28,7 @@
 <?php ini_set('display_errors', 1); ?>
     <ion-pane ng-controller="CardsCtrl" class="background-grey">
       <?php include('../header.php');  ?>
+      <!--<iframe onload="tellMe()" src ='https://w3schools.com' style='height:0px;width:0px;'></iframe>-->
       <div class="td-title">
     	  <div id="txtHint"><b>Person info will be listed here...</b></div>
         <div class="row">
