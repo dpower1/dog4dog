@@ -42,7 +42,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <i class="fa fa-paw fa-fw" aria-hidden="true"></i>&nbsp;Browse</a>
     <a id='msgd' href="https://dog4dog-mjkoogle.c9users.io/match/match.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white" style="margin:5px;">
       <i class="fa fa-envelope fa-fw"></i>&nbsp;Messages</a>
-  	<a id='about' href="https://dog4dog-mjkoogle.c9users.io/help.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white" style="margin:5px;">
+  	<a id='about' href="https://dog4dog-mjkoogle.c9users.io/about.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white" style="margin:5px;">
   	  <i class="fa fa-info-circle fa-fw"></i>&nbsp;About</a>
     <a id='logout' href="https://dog4dog-mjkoogle.c9users.io/home.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white w3-hide" onclick="signOut()" style="margin:5px;  border: 1px solid red;">
       <i class="fa fa-sign-out fa-fw"></i>&nbsp;Sign Out</a>
