@@ -1,8 +1,12 @@
 <?php
 session_start();
 ini_set('display_errors', 1);
-//$userID = $_SESSION["userID"];
-$userID = "bill";
+	if(!isset($_SESSION['userID'])){
+    	header("Location: https://dog4dog-mjkoogle.c9users.io/home.php");
+    	die("redirected");
+	}
+
+$userID = $_SESSION["userID"];
 $target_dir = "images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $path = $target_dir .$userID. basename($_FILES["fileToUpload"]["name"]);
@@ -10,22 +14,24 @@ $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
 
-$servername = "dogfordog.cyorizcugugl.us-east-1.rds.amazonaws.com";
-$username = "root";
-$password = "dogfordog";
-$dbname ="dogfordog";
-$port = "3306";
-$body = $_POST["body"];
-$newLocation = $_POST["location"];
-$newUsername = $_POST["name"];
+    $servername = getenv('IP');
+    $username = getenv('C9_USER');
+    $password = "";
+    $database = "dogfordog";
+    $dbport = 3306;
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname, $port);
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $database, $dbport);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+    //echo "Connected successfully (".$servername.")";
+    $body = $_POST["body"];
+    $newLocation = $_POST["location"];
+    $newUsername = $_POST["name"];
+    $newMUUTUsername = $_POST["MUUT"];
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -60,20 +66,21 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-        $sql_query_userDescription ="UPDATE `Users` SET Description='$body', location='$newLocation', Picture='$target_file', name='$newUsername' WHERE userID='$userID'";
+        //echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        $sql_query_userDescription ="UPDATE `Users` SET Description='$body', location='$newLocation', Picture='$target_file', name='$newUsername', username='$newMUUTUsername' WHERE userID='$userID'";
         $result = mysqli_query($conn, $sql_query_userDescription);
     
         if(! $result){
             print("Error - query could not be executed");
             $error = mysqli_error($conn);
             print "<p> . $error . </p>";
-        }   
+        }  
+        $_SESSION["Default"] = false;
 
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
 }
-header("Location: http://ec2-54-211-83-199.compute-1.amazonaws.com/dog4dog/profile.php");
+header("Location: https://dog4dog-mjkoogle.c9users.io/profile.php");
 die();
 ?>

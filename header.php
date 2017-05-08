@@ -52,9 +52,14 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 <!-- Navbar on small screens -->
 <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
-  <a href="https://dog4dog-mjkoogle.c9users.io/profile.php" class="w3-bar-item w3-button w3-padding-large">Profile</a>
-  <a href="https://dog4dog-mjkoogle.c9users.io/browse/ionic2.php" class="w3-bar-item w3-button w3-padding-large">Browse</a>
-  <a href="https://dog4dog-mjkoogle.c9users.io/match/match.php" class="w3-bar-item w3-button w3-padding-large">Messages</a>
-  <a href="https://dog4dog-mjkoogle.c9users.io/help.html" class="w3-bar-item w3-button w3-padding-large">About</a>
-  <a href="https://dog4dog-mjkoogle.c9users.io/home.php" class="w3-bar-item w3-button w3-padding-large" onclick="signOut()" id="logout">Sign Out</a>
+  <a href="https://dog4dog-mjkoogle.c9users.io/profile.php" class="w3-bar-item w3-button w3-padding-large">
+    <i class="fa fa-user fa-fw"></i>&nbsp;Profile</a>
+  <a href="https://dog4dog-mjkoogle.c9users.io/browse/ionic2.php" class="w3-bar-item w3-button w3-padding-large">
+    <i class="fa fa-paw fa-fw" aria-hidden="true"></i>&nbsp;Browse</a>
+  <a href="https://dog4dog-mjkoogle.c9users.io/match/match.php" class="w3-bar-item w3-button w3-padding-large">
+        <i class="fa fa-envelope fa-fw"></i>&nbsp;Messages</a>
+  <a href="https://dog4dog-mjkoogle.c9users.io/about.php" class="w3-bar-item w3-button w3-padding-large">
+    	  <i class="fa fa-info-circle fa-fw"></i>&nbsp;About</a>
+  <a href="https://dog4dog-mjkoogle.c9users.io/home.php" class="w3-bar-item w3-button w3-padding-large" onclick="signOut()" id="logout">
+        <i class="fa fa-sign-out fa-fw"></i>&nbsp;Sign Out</a>
 </div>
