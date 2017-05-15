@@ -4,6 +4,7 @@
   <?php include('header.php');  ?>
 </head>
 
+<body class="w3-theme-l5">
 <!-- Page Container -->
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
   <!-- The Grid -->
@@ -52,7 +53,7 @@
 
       <aside class="w3-card-2 w3-round w3-white w3-padding-16 w3-center">
         <a href="http://www.petsmart.com/"><img src="/images/petsmart-stock-up-and-save-sale-save-more-large-5.jpg" style="max-width:100%; height:200px;width:300px; border-style: solid;"></a>
-      </div>
+      </aside>
       
     <!-- End Right Column -->
     </div>
@@ -62,11 +63,13 @@
   
 <!-- End Page Container -->
 </div>
-<br>
+
+<!-- Oh, bite me. It works. -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <!-- Footer -->
-<footer class="w3-container w3-theme-d3 w3-bottom w3-padding-16">
-  <h5 class='w3-center'>&copy; Dog4Dog Inc. 2017 &nbsp;&nbsp;&nbsp;<a href='https://en.wikipedia.org/wiki/Twilight_bark'>Contact Us &#9733;</a> </h5>
+<footer class="w3-container w3-theme-d3 w3-padding-16">
+  <h5 class='w3-center'>&copy; Dog4Dog Inc. 2017 &nbsp;&nbsp;&nbsp;<a href='https://en.wikipedia.org/wiki/Twilight_bark' target='_blank'>Contact Us &#9733;</a> </h5>
 </footer>
 
 <script>

@@ -51,7 +51,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 </div>
 
 <!-- Navbar on small screens -->
-<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large w3-padding-64">
   <a href="https://dog4dog-mjkoogle.c9users.io/profile.php" class="w3-bar-item w3-button w3-padding-large">
     <i class="fa fa-user fa-fw"></i>&nbsp;Profile</a>
   <a href="https://dog4dog-mjkoogle.c9users.io/browse/ionic2.php" class="w3-bar-item w3-button w3-padding-large">
@@ -62,4 +62,5 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     	  <i class="fa fa-info-circle fa-fw"></i>&nbsp;About</a>
   <a href="https://dog4dog-mjkoogle.c9users.io/home.php" class="w3-bar-item w3-button w3-padding-large" onclick="signOut()" id="logout">
         <i class="fa fa-sign-out fa-fw"></i>&nbsp;Sign Out</a>
+  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="height: 43px; margin:5px;"> </div>
 </div>

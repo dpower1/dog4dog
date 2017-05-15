@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 	}
 
 $userID = $_SESSION["userID"];
-$target_dir = "images/";
+$target_dir = "images/Profiles/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $path = $target_dir .$userID. basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;

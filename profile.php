@@ -40,7 +40,7 @@
 	$userName = $row_array["name"];
 ?>
 
-	<div class = "user_info" style='margin: auto; width: 30%; border: 3px solid #FFA500; border-radius: 5px; background-color: #f2f2f2; padding: 15px;'> 	
+	<div class = "user_info" style='margin: auto; width: 60%; border: 3px solid #FFA500; border-radius: 5px; background-color: #f2f2f2; padding: 15px;'> 	
 		<!-- beautiful display of USERINFO!!! 
 			<td class = "user_info">-->
 		<h2 class="w3-text-orange w3-center w3-font-size:large" style="max-width:100%;"><u> Your Profile Information </u></h2> 

@@ -49,12 +49,15 @@
   
 <!-- End Page Container -->
 </div>
-<br>
+
+<!-- Oh, bite me. It works. -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <!-- Footer -->
-<footer class="w3-container w3-theme-d3 w3-bottom w3-padding-16">
-  <h5 class='w3-center'>&copy; Dog4Dog Inc. 2017 &nbsp;&nbsp;&nbsp;<a href='https://en.wikipedia.org/wiki/Twilight_bark'>Contact Us &#9733;</a> </h5>
+<footer class="w3-container w3-theme-d3 w3-padding-16">
+  <h5 class='w3-center'>&copy; Dog4Dog Inc. 2017 &nbsp;&nbsp;&nbsp;<a href='https://en.wikipedia.org/wiki/Twilight_bark' target='_blank'>Contact Us &#9733;</a> </h5>
 </footer>
+
 
 <script>
 // Used to toggle the menu on smaller screens when clicking on the menu button
