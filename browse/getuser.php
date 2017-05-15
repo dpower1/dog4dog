@@ -2,6 +2,10 @@
 header("Content-Type: application/json", true);
 ini_set('display_errors', 1);
 
+// get the q parameter from URL
+//$uID = $_REQUEST["q"];
+
+
 /*
 $servername = "dogfordog.cyorizcugugl.us-east-1.rds.amazonaws.com";
 $username = "root";
@@ -69,6 +73,8 @@ if (!isset($myObj))
 //$myObj->name = array();
 //$myObj->image = "http://ec2-54-211-83-199.compute-1.amazonaws.com/dog4dog/" . $row["Picture"];
 $myObj->image = "https://dog4dog-mjkoogle.c9users.io/" . $row["Picture"];
+//changed name to userID but didnt change the object name
+$myObj->userID = $row["userID"];
 $myObj->name = $row["name"];
 //array_push($myObj->image,"http://ec2-54-211-83-199.compute-1.amazonaws.com/dog4dog/" . $row["Picture"]);
 //array_push($myObj->name,"Name: " . $row["name"]);
@@ -118,6 +124,7 @@ if ($result->num_rows > 0) {
 		$myObj = new stdClass();
 		
 		$myObj->image = "https://dog4dog-mjkoogle.c9users.io/" . $row["Picture"];
+		$myObj->userID = $row["userID"];
 		$myObj->name = $row["name"];
 		array_push($users, $myObj);
 		

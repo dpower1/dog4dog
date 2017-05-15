@@ -1,4 +1,23 @@
 //angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards2'])
+function tellMe(){
+	
+	//console.log("in body");
+	//$.ajax({url:"sessionGet.php", success: gotSess});
+	console.log("started tellMe");
+	$.ajax({url: "sessionGet.php", success: function(result){
+        loggedID = result;
+        console.log( "tellMe: " + loggedID);
+    }});
+}
+
+function gotSess(sessIn){
+  
+  loggedID = sessIn;
+  //loggedID = 5;
+  console.log(loggedID);
+  
+  
+}
 
 
 var cardTypes;
@@ -8,6 +27,8 @@ cardTypes = [{ image: 'http://c1.staticflickr.com/1/421/19046467146_548ed09e19_n
 var wait = 1;
 
 var loggedID;
+
+tellMe();
 
 //promise
 
@@ -71,30 +92,9 @@ console.log("before stuff");
   
             }
     };
-	
+//console.log("loggedID: " + loggedID);	
 xmlhttp.open("GET","getuser.php?",true);
 xmlhttp.send();
-
-
-function tellMe(){
-	
-	console.log("in body");
-	//$.ajax({url:"sessionGet.php", success: gotSess});
-	
-	$.ajax({url: "sessionGet.php", success: function(result){
-        loggedID = result;
-        console.log(loggedID);
-    }});
-}
-
-function gotSess(sessIn){
-  
-  loggedID = sessIn;
-  //loggedID = 5;
-  console.log(loggedID);
-  
-  
-}
 
 
 
@@ -298,7 +298,9 @@ xmlhttp.send();
 	
 	var str = card.name;
 	
-	obj = { "uName":"test", "liked":card.name };
+	//obj = { "uName":"test", "liked":card.name };
+	obj = { "uName":loggedID, "liked":card.name, "likedUID":card.userID };
+	console.log(obj);
 	dbParam = JSON.stringify(obj);
 	
 	var xmlhttp = new XMLHttpRequest();

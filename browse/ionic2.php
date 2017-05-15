@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['userID'])){
+    	header("Location: https://dog4dog-mjkoogle.c9users.io/about.php");
+    	die("redirected");
+	}
+?>
 <?php session_start(); ?>
 <html>
 
@@ -22,7 +29,7 @@
 </head>
 
 <!--<body ng-app="starter" no-scroll onload="tellMe()">-->
-<body ng-app="starter" no-scroll onload="tellMe()">
+<body ng-app="starter" no-scroll>
 
 <!--<body no-scroll > -->
 <?php ini_set('display_errors', 1); ?>
@@ -30,15 +37,16 @@
       <?php include('../header.php');  ?>
       <!--<iframe onload="tellMe()" src ='https://w3schools.com' style='height:0px;width:0px;'></iframe>-->
       <div class="td-title">
-    	  <div id="txtHint"><b>Person info will be listed here...</b></div>
+    	  <div id="txtHint"><b></b></div>
         <div class="row">
-          <div class="col">Master: <span>{{ cards.master.length }}</span></div>
+          
+          <!--<div class="col">Master: <span>{{ cards.master.length }}</span></div>
           <div class="col">Cards: <span>{{ cards.active.length }}</span></div>
-          <div class="col">Discards: <span>{{ cards.discards.length }}</span></div>
+          <div class="col">Discards: <span>{{ cards.discards.length }}</span></div>-->
         </div>
         <div class="row">
-          <div class="col">Liked: <span>{{ cards.liked.length }}</span></div>
-          <div class="col">Disliked: <span>{{ cards.disliked.length }}</span></div>
+          <!--<div class="col">Liked: <span>{{ cards.liked.length }}</span></div>
+          <div class="col">Disliked: <span>{{ cards.disliked.length }}</span></div>-->
         </div>
       </div>
 
